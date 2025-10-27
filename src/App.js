@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import ChatbotPage from "./pages/ChatbotPage";
 import AdminUpload from "./pages/AdminUpload";
 import SpeechChatPage from "./pages/SpeechChatPage";
 
