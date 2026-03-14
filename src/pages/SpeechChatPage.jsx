@@ -68,7 +68,7 @@ export default function SpeechChatPage() {
   //   }
   // };
   try {
-      const res = await fetch("http://127.0.0.1:10000/", {
+      const res = await fetch("https://agentic-ai-j5i8.onrender.com/", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
