@@ -37,7 +37,7 @@ export default function AdminUpload() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+    <div className="flex flex-col items-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md p-6 bg-white rounded-2xl shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Admin Upload Panel</h2>
         <input

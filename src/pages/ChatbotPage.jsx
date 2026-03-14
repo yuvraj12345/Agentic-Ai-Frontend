@@ -13,7 +13,7 @@ export default function ChatbotPage() {
     const updatedMessages = [...messages, newMessage];
     setMessages(updatedMessages);
     setLoading(true);
-    const API_URL = "http://127.0.0.1:8000/ask";
+    const API_URL = "https://agentic-ai-j5i8.onrender.com/ask";
     try {
       const res = await fetch(API_URL, {
         method: "POST",

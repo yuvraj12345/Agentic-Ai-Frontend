@@ -51,15 +51,32 @@ export default function SpeechChatPage() {
     setInput("");
     setLoading(true);
 
-    try {
-      const res = await fetch("http://127.0.0.1:8000/ask", {
-        method: "POST",
+  //   try {
+  //     const res = await fetch("https://agentic-ai-j5i8.onrender.com/ask", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ query: text }),
+  //     });
+
+  //     const data = await res.json();
+  //     const botMessage = { role: "assistant", content: data.response };
+  //     setMessages((prev) => [...prev, botMessage]);
+  //   } catch (err) {
+  //     console.error("Error:", err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+  try {
+      const res = await fetch("http://127.0.0.1:10000/", {
+        method: "GET",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: text }),
       });
 
       const data = await res.json();
-      const botMessage = { role: "assistant", content: data.response };
+      console.log(data)
+      const botMessage = { role: "assistant", content: data.message };
+      console.log(botMessage)
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
       console.error("Error:", err);
@@ -77,12 +94,12 @@ export default function SpeechChatPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4">
+    <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
       <div className="w-full max-w-lg bg-white shadow-lg rounded-2xl p-4 flex flex-col">
-    <h1 className="text-3xl font-bold text-blue-700 mb-6 tracking-wide">
-        MetaStore Companion
+    <h1 className="text-3xl font-bold text-blue-700 mb-6 tracking-wide" style={{ margin: "auto" , marginBottom: "1rem"}}>
+      MetaStore Companion
     </h1>
-        <div className="h-96 overflow-y-auto border rounded-lg p-3 bg-gray-50 mb-4">
+        <div className="h-96 overflow-y-auto border rounded-lg p-3 bg-gray-50 ">
             
           {messages.map((msg, i) => (
             <div
